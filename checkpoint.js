@@ -139,8 +139,21 @@ const {
   // Continuando con el nodo 2 de la lista 2, conectandose con el nodo 2 de la lista 2.
   var mergeLinkedLists = function(linkedList1, linkedList2){
     // Tu código aca:
-    
-  }
+     let nuevaLista = [];
+     let Head1 = linkedList1.head; 
+     let Head2 = linkedList2.head;
+     while(Head1 !== null && Head2 !== null){
+         nuevaLista.push(Head1.value);
+         nuevaLista.push(Head2.value);
+         Head1 = Head1.next; 
+         Head2 = Head2.next;
+        }
+      let listaFinal = new LinkedList();
+      for(let i = 0; i < nuevaLista.length; i++){
+          listaFinal.add(nuevaLista[i]);
+        }
+        return listaFinal;  
+    }; 
   
   
   // ----------------------
@@ -246,16 +259,7 @@ const {
   //       5                    ---> Nivel 4
   // Este arbol tiene una altura de 4
   // PISTA: Una forma de resolverlo es pensarlo recursivamente y usando Math.max
-  
-  
-const Arbol = new BinarySearchTree(10);
- Arbol.left = new BinarySearchTree(5);
- Arbol.right = new BinarySearchTree(15);
 
-  
-  
-  
-  
   BinarySearchTree.prototype.height = function(nivel = 1){
     // Tu código aca:
     let resultSet = [];
@@ -269,7 +273,6 @@ const Arbol = new BinarySearchTree(10);
      resultSet.sort((a, b) => a-b);
      return resultSet[resultSet.length - 1]; 
   } ;
-  console.log(Arbol.height())
   
   
   // ---------------
