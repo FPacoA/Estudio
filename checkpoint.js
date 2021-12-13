@@ -247,11 +247,29 @@ const {
   // Este arbol tiene una altura de 4
   // PISTA: Una forma de resolverlo es pensarlo recursivamente y usando Math.max
   
-  BinarySearchTree.prototype.height = function(){
+  
+const Arbol = new BinarySearchTree(10);
+ Arbol.left = new BinarySearchTree(5);
+ Arbol.right = new BinarySearchTree(15);
+
+  
+  
+  
+  
+  BinarySearchTree.prototype.height = function(nivel = 1){
     // Tu código aca:
-    
-    
+    let resultSet = [];
+    resultSet.push(nivel) 
+    if(this.left !== null){
+     resultSet.push(...this.left.height(nivel+1))
+    }
+    if(this.right !== null){
+     resultSet.push(...this.right.height(nivel+1))
+    }
+     resultSet.sort((a, b) => a-b);
+     return resultSet[resultSet.length - 1]; 
   } ;
+  console.log(Arbol.height())
   
   
   // ---------------
