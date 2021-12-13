@@ -261,10 +261,10 @@ const Arbol = new BinarySearchTree(10);
     let resultSet = [];
     resultSet.push(nivel) 
     if(this.left !== null){
-     resultSet.push(...this.left.height(nivel+1))
+     resultSet.push(this.left.height(nivel+1))
     }
     if(this.right !== null){
-     resultSet.push(...this.right.height(nivel+1))
+     resultSet.push(this.right.height(nivel+1))
     }
      resultSet.sort((a, b) => a-b);
      return resultSet[resultSet.length - 1]; 
