@@ -42,9 +42,27 @@ const {
     
   }
   
-  
+//   function sequenceFunction (equation) {
+//     // equation = [[f(n-1), 'x', f(n-2)], '-', f(n-2)]
+//     // equation = [i-1, '+', i-2]
+//     // como leemos la equation
+//     function readStringEquation (string_equation) {
+//         const operation = string_equation[1] === '*' ? ((x, y) => x * y ) : ((x, y) => x + y )
+//         return operation()
+//     }
+//     let equation = readStringEquation(equation)
+//     const return_of_function = equation(n-1) + equation(n - 2)
+//     return function equation(n) {
+//         return return_of_function
+//     }
+
+//   }
+
+
   // EJERCICIO 2
   // Secuencia inventada: f(n) = f(n-1) x f(n-2) - f(n-2)
+  // f(n) = f(n-1) + f(n-2)
+  // f(n) = n x f(n-1)
   // Siendo f, secuenciaHenry.
   // Donde las primeras dos posiciones son dadas por el parametro recibidos y a partir de
   // la siguiente se calcula como la multiplicación de los 2 números anteriores restados al número anterior.
@@ -377,8 +395,13 @@ const {
   
   function closureDetect(symptoms, min) {
     // Tu código aca:
+    return function (person) {
+        const interseccion = symptoms.filter(sym => person.symptoms.includes(sym))
+        return interseccion.length >= min
+    }
     
   }
+
   
   // -------------------
   

@@ -6,7 +6,7 @@ const {
 } = require('../checkpoint.js');
 
 
-xdescribe('EJERCICIO 10: closureDetect', function() {
+describe('EJERCICIO 10: closureDetect', function() {
   var symptomsCovid = ['fever', 'dry cough', 'tiredness', 'sore throat', 'diarrhoea', 'loss of taste', 'loss of smell'];
   var symptomsAngina = ['heaviness in chest', 'shortness of breath', 'nausea']
   var covidDetector = closureDetect(symptomsCovid, 3);
