@@ -17,13 +17,14 @@ Queue.prototype.size = function() {
 function LinkedList() {
   this.head = null;
 }
-LinkedList.prototype.finde = function(posicion){
+LinkedList.prototype.find = function(posicion){
   let Head = this.head;
   for(let i = 0; i < posicion; i++){
     Head = Head.next;
   }
   return Head.value;
 };
+
 
 LinkedList.prototype.add = function(valor) {
   var nuevoNodo = new Node(valor);
@@ -59,6 +60,8 @@ LinkedList.prototype.remove = function() {
   nodoPrevious.next = null;
   return nodoActual.value;
 }
+
+
 
 LinkedList.prototype.search = function(arg) {
   var nodoActual = this.head;

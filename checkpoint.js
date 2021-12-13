@@ -99,6 +99,13 @@ const {
   
   LinkedList.prototype.size = function(){
     // Tu código aca:
+    let head = this.head
+    let i = 0
+    while(head !== null){
+        head = head.next
+        i++
+    }
+    return i
    
   
   }
@@ -122,11 +129,11 @@ const {
   
   LinkedList.prototype.switchPos = function(pos1, pos2){
     // Tu código aca:
-    if(!(pos1 >= 0 && pos1 < this.size() && pos2 >= 0 && pos2 < this.size)) return false
+    if(!(pos1 >= 0 && pos1 < this.size() && pos2 >= 0 && pos2 < this.size())) return false
     let aux1 = null;
     let aux2 = null;
-    aux1 = this.finde(pos1);
-    aux2 = this.finde(pos2);
+    aux1 = this.find(pos1);
+    aux2 = this.find(pos2);
     let i = 0;
     let Head = this.head;
     while(Head !== null){
@@ -141,7 +148,7 @@ const {
     }
     return true;
 };
-  
+
   
   // EJERCICIO 5
   // Implementar la función mergeLinkedLists que, a partir de dos listas simplemente enlazadas 
@@ -234,7 +241,6 @@ const {
         Castillo1 = Castillo1 + R2;
        }
       }
-      console.log(Castillo1, Castillo2);
     
    if(Castillo1 > 0 && Castillo2 > 0){
      if(Castillo1 === Castillo2){ 
