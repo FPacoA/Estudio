@@ -5,7 +5,7 @@ const {
   LinkedList
 } = require('../checkpoint.js');
 
-xdescribe('LinkedList', function() {
+describe('LinkedList', function() {
   var linkedList = new LinkedList();
 
   it('EJERCICIO 4: switchPos debe intercambiar dos nodos segun las posiciones dadas', function() {

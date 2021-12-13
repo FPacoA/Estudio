@@ -17,6 +17,13 @@ Queue.prototype.size = function() {
 function LinkedList() {
   this.head = null;
 }
+LinkedList.prototype.finde = function(posicion){
+  let Head = this.head;
+  for(let i = 0; i < posicion; i++){
+    Head = Head.next;
+  }
+  return Head.value;
+};
 
 LinkedList.prototype.add = function(valor) {
   var nuevoNodo = new Node(valor);

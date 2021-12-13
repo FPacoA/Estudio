@@ -122,8 +122,25 @@ const {
   
   LinkedList.prototype.switchPos = function(pos1, pos2){
     // Tu código aca:
-    
-  }
+    if(!(pos1 >= 0 && pos1 < this.size() && pos2 >= 0 && pos2 < this.size)) return false
+    let aux1 = null;
+    let aux2 = null;
+    aux1 = this.finde(pos1);
+    aux2 = this.finde(pos2);
+    let i = 0;
+    let Head = this.head;
+    while(Head !== null){
+       if(i === pos1){
+           Head.value = aux2;
+        } 
+        if(i === pos2){
+            Head.value = aux1;
+        }
+        Head = Head.next;
+        i++
+    }
+    return true;
+};
   
   
   // EJERCICIO 5
